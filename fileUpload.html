@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+</head>
+<body>
+    <h1>Upload single file</h1>
+    <hr>
+    Upload your file: 
+    <input type="file" id="file_upload"> 
+    <button id="upload_button" onclick="uploadFile()">Upload</button>
+    <br><br>
+    File type should be image and size should be lesser or equal to 200 KB.
+    <br><br>
+    <img src="" id="image_display" height="450" style="display: none;">
+    <h3 id="messageArea"></div>
+    <script>
+        function uploadFile(){
+            
+            const file = document.getElementById("file_upload").files[0];
+            const img = document.getElementById("image_display");
+            if(!file){
+                document.getElementById("messageArea").innerHTML="No file selected!";
+                img.style.display="none";
+                return;
+            }
+            if(validateImage(file)){
+                
+                img.src = URL.createObjectURL(file);
+                img.style.display="block";
+                document.getElementById("messageArea").innerHTML="File uploaded!";
+            }
+           
+        }
+
+        function validateImage(file){
+            document.getElementById("messageArea").innerHTML="";
+            const img = document.getElementById("image_display");
+            if(file.type.substr(0,5) !== "image"){
+                document.getElementById("messageArea").innerHTML="File type not supported!";
+                img.style.display="none";
+                return false;
+            }
+            if(file.size/1000 > 200){
+                document.getElementById("messageArea").innerHTML="File size too big!";
+                img.style.display="none";
+                return false;
+            }
+            
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple file upload</title>
+</head>
+<body>
+    <h1>Multiple File Upload</h1>
+    <hr>
+    Upload Multiple files: <input type="file" id="multipleFiles" multiple>
+    <button id="upload_button" onclick="upload_multiple_files()">Upload</button>
+
+    <br><br>
+    <ul>
+        <li>Maximum allowed 5 files.</li>
+        <li>Total size limit 1MB</li>
+        <li>Only image type allowed</li>
+    </ul>
+
+    <br><br>
+    <div id="tableDiv"></div>
+    <br><br>
+    <div><h3 id="messageArea"></h3></div>
+
+    <script>
+        function upload_multiple_files(){
+            const files = document.getElementById("multipleFiles").files;
+            document.getElementById("tableDiv").innerHTML = "";
+            document.getElementById("messageArea").innerHTML = "";
+
+            if(validateFiles(files)){
+                createtable(files);
+            }
+        }
+
+        function validateFiles(files){
+            if(files.length == 0){
+                document.getElementById("messageArea").innerHTML = "No file selected!";
+                return false;
+            }
+            if(files.length > 5){
+                document.getElementById("messageArea").innerHTML = "Only 5 files allowed!";
+                return false;
+            }
+            let totalSize = 0;
+            for(let i=0; i<files.length; i++){
+                if(files[i].type.substr(0,5) !== "image"){
+                    document.getElementById("messageArea").innerHTML = "All files should be image!";
+                    return false;
+                }
+                totalSize += files[i].size;
+            }
+            if(totalSize/1000 > 1000){
+                document.getElementById("messageArea").innerHTML = "Total file size should be 1 MB!";
+                return false;
+            }
+            return true;
+        }
+        function createtable(files){
+            let str="<table>";
+                str+="<tr><th>File name</th><th>Type</th><th>Size (Bytes)</th></tr>"
+            for(let i=0; i<files.length; i++){
+                str+="<tr><td>"+files[i].name+"</td><td>"+files[i].type+"</td><td>"+files[i].size+"</td></tr>"
+            }
+            str+="</table>"
+            document.getElementById("tableDiv").innerHTML = str;
+            document.getElementById("messageArea").innerHTML = "Files uploaded";
+        }
+    </script>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td{
+            padding: 5px;
+        }
+    </style>
+</body>
+</html>
