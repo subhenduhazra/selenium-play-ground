@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+</head>
+<body>
+    <h1>Login Page</h1>
+    <hr>
+    You will expect an alert after successful login.
+    <hr>
+    Username: <input type="text" id="user-name"><br><br>
+    Password: <input type="password" id="password"><br><br>
+    <button id="logInButton" onclick="login()">Login</button>
+    <br><br>
+    <div>
+        Put anyone of the combination: <br>
+        username: ruchi , password: Ruchi123 <br>
+        username: john , password: John456 <br>
+        username: kate , password: Kate987 <br>
+        username: shyam , password: Shyam765 <br>
+        username: arun , password: Arun537 <br>
+    </div>
+    <br><br><br>
+    Not have an account <a href="createUser.html">Create user</a>
+
+    <script>
+        function login(){
+          
+            if(
+                (document.getElementById("user-name").value == "ruchi" && document.getElementById("password").value=="Ruchi123") ||
+                (document.getElementById("user-name").value == "john" && document.getElementById("password").value=="John456") ||
+                (document.getElementById("user-name").value == "kate" && document.getElementById("password").value=="Kate987") ||
+                (document.getElementById("user-name").value == "shyam" && document.getElementById("password").value=="Shyam765") ||
+                (document.getElementById("user-name").value == "arun" && document.getElementById("password").value=="Arun537")
+            
+            ){
+                alert("Login success");
+                window.location="commerce/index.html";
+            }else{
+                alert("Sorry unable to login")
+            }
+        }
+    </script>
+</body>
+</html>

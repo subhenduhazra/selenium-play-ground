@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+</head>
+<body>
+    <h1>Create User</h1>
+    <hr>
+    <div>
+        First Name: <input type="text" id="first-name"> <br><br>
+        Last Name: <input type="text" id="last-name"> <br><br>
+        Username: <input type="text" id="user-name"><br><br>
+        Password: <input type="password" id="password"><br><br>
+        Confirm Password: <input type="password" id="confirm-password"><br><br>
+        Gender: <input type="radio" id="gender-male" name="gender"> Male   <input type="radio" id="gender-female" name="gender"> Female <br><br>
+        <input type="checkbox" id="have-bike"> I have a bike <br><br>
+        <input type="checkbox" id="adult-confirm"> I am 18 year old<br><br>
+        Select your bike manufacturer 
+        <select id="bike-manufacturer">
+            <option value="hero">Hero</option>
+            <option value="honda">Honda</option>
+            <option value="bajaj">Bajaj</option>
+            <option value="tvs">TVS</option>
+            <option value="ather">Ather</option>
+        </select>
+        <br><br>
+        Your date of birth: <input type="date" id="user-dob"> <br><br>
+        <button id="create-user-button" onclick="createUser()">Create User</button>
+        <br><br><br><br>
+        Already have an account? <a href="login.html">Log in</a>
+    </div>
+    <script>
+        function createUser(){
+            validate();
+        }
+        function logError(msg){
+            alert("Failed to create user! "+msg);
+        }
+        function validate(){
+            if(!validateFirstName()){
+                logError("First name is empty");
+            }else if(!validateUsername()){
+                logError("username is empty")
+            }else if(!validatePasswordEmpty()){
+                logError("password is empty");
+            }else if(!validatePasswordLength()){
+                logError("password length should be 8 or more character");
+            }else if(!validateConfirmPassword()){
+                logError("password and confirm password not matched")
+            }else if(!validate18Years()){
+                logError("you are not 18 years old");
+            }else if(!validateDOB()){
+                logError("DOB is empty or invalid");
+            }else if(!validateDOBwith18years()){
+                logError("according to your DOB you are not 18");
+            }else{
+                alert("User created successfully")
+            }
+        }
+        function validateFirstName(){
+            return document.getElementById("first-name").value.trim().length > 0;
+        }
+        function validateUsername(){
+            return document.getElementById("user-name").value.trim().length > 0;
+        }
+        function validatePasswordEmpty(){
+            return document.getElementById("password").value.trim().length > 0;
+        }
+        function validatePasswordLength(){
+            return document.getElementById("password").value.trim().length >=8
+        }
+        function validateConfirmPassword(){
+            return document.getElementById("password").value.trim() === document.getElementById("confirm-password").value.trim();
+        }
+        function validate18Years(){
+            return document.getElementById("adult-confirm").checked;
+        }
+        function validateDOB(){
+            return document.getElementById("user-dob").value;
+        }
+        function validateDOBwith18years(){
+           
+            let record=document.getElementById('user-dob').value.trim();
+            let dob = new Date(record);
+            return is18(dob, new Date());
+        }
+
+        function is18(start, end) {
+            if (end.getFullYear() - start.getFullYear() == 18) {
+                if (end.getUTCMonth() == start.getUTCMonth()) {
+                return end.getUTCDate() >= start.getUTCDate();
+                }
+                return end.getUTCMonth() > start.getUTCMonth();
+            }
+            return end.getFullYear() - 18 > start.getFullYear();
+        }
+    </script>
+</body>
+</html>

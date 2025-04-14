@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Win tab</title>
+</head>
+<body>
+    <h1>Window</h1>
+    <button onClick="openWindowInNewTab()" id="opn_new_tab">Open window in new tab</button><br><br>
+    <button onClick="openInCurrentFrame()" id="open_current">Open window in current frame/window</button><br><br>
+    <button onClick="openInParentFrame()" id="open_parent">Open window in parent frame/window</button><br><br>
+    <button onClick="openPopUp()" id="open_popup">open pop up</button><br><br>
+    
+
+    <script>
+        function openWindowInNewTab(){
+            window.open("login.html","_blank");
+        }
+
+        function openInCurrentFrame(){
+            window.open("login.html","_self");
+        }
+        function openInParentFrame(){
+            window.open("login.html","_parent");
+        }
+        function openPopUp(){
+            window.open("login.html","_blank","height=550,width=750,top=50,left=50");
+        }
+    
+    </script>
+</body>
+</html>
