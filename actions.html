@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actions</title>
+</head>
+<body>
+    <h1>Mouse actions</h1>
+    <hr>
+    <div style="width: 80%; height:50px; border: 1px solid black; display: flex; align-items: center; justify-content: center; margin:2px auto;">
+        <button id="click_me" >Click Me</button>
+
+    </div>
+    <div style="width: 80%; padding: 10px; border: 1px solid gray; display: flex; align-items: center; justify-content: center; margin:2px auto;">
+        <span>Mouse Action result: </span>
+        <span id="mouse_action_display" style="margin-left: 10px;"></span>
+    </div>
+
+    <br><br><br>
+    <h1>Key board event</h1>
+    <hr>
+    <div style="width: 80%; padding:10px; border: 1px solid gray; display: flex; align-items: center; justify-content: center; margin:2px auto;flex-direction: column;">
+        <div>Keyboard Action result: </div>
+        <div>Key: <span id="key_action_display" style="margin-left: 10px;"></span></div>
+        <div>Cotrol pressed: <span id="ctrl_action_display" style="margin-left: 10px;"></span></div>
+        <div>Command Pressed: <span id="cmnd_action_display" style="margin-left: 10px;"></span></div>
+        <div>Option pressed: <span id="optn_action_display" style="margin-left: 10px;"></span></div>
+        <div>Shift pressed: <span id="shift_action_display" style="margin-left: 10px;"></span></div>
+    </div>
+    <script>
+       document.getElementById("click_me").addEventListener("click",()=>{
+            document.getElementById("mouse_action_display").innerHTML="Click";
+       })
+       document.getElementById("click_me").addEventListener("dblclick",()=>{
+            document.getElementById("mouse_action_display").innerHTML="Double Click";
+       })
+       document.getElementById("click_me").addEventListener("mousedown",(e)=>{
+            if(e.which == 3)
+                document.getElementById("mouse_action_display").innerHTML="RightClick";
+       })
+       document.getElementsByTagName("body")[0].addEventListener("keydown",(e)=>{
+        console.log(e)
+        document.getElementById("key_action_display").innerText = e.key;
+        document.getElementById("ctrl_action_display").innerText = (e.ctrlKey == true)?"Yes":"No";
+        document.getElementById("cmnd_action_display").innerText = (e.metaKey == true)?"Yes":"No";
+        document.getElementById("optn_action_display").innerText = (e.altKey == true)?"Yes":"No";
+        document.getElementById("shift_action_display").innerText = (e.shiftKey == true)?"Yes":"No";
+       })
+    </script>
+</body>
+</html>
