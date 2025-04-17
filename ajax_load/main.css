@@ -1,0 +1,83 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: tahoma;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#main_header{
+    background:linear-gradient(to right, rgb(7, 55, 60) 25%, rgb(180, 156, 1) 90%);
+    font-size: 25px;
+    padding: 20px;
+    color: white;
+    border-bottom: 1px solid white;
+}
+#main_area{
+    display: flex;
+    flex-grow: 1;
+}
+
+#student_list{
+    width: 25%;
+    background-color: rgb(7, 55, 60);
+}
+#student_list .studentItem{
+    background-color: rgb(7, 55, 60);
+    color: white;
+    border-bottom: 1px solid white;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+#student_list .studentItem:hover{
+    background-color: rgb(13, 94, 103);
+    cursor: pointer;
+}
+#details_area{
+    width: 74%;
+}
+#details_area{
+    background-color: #fffef0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#details_area #details_actual_area{
+    min-width: 60%;
+    border: 3px solid maroon;
+    border-radius: 10px;
+}
+
+#details_area #details_actual_area header{
+    background-color: maroon;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    
+}
+
+#details_area #details_actual_area #details_body{
+    padding: 15px;
+    background-color: white;
+    border-bottom-left-radius:10px ;
+    border-bottom-right-radius: 10px;
+}
+#details_area #details_actual_area #details_body div{
+    margin: 5px;
+}
+
+#spin_wheel{
+    height:50px;
+    width: 50px;
+    border:5px solid lightgray;
+    border-radius: 50%;
+    border-top:5px solid maroon;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
