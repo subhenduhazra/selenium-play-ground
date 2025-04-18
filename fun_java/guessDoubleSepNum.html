@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the double digit number</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <h1>Guess the double digit number</h1>
+    <h3>One double digit number is generated (from 0 to 99) but displayed in two separate boxes. 
+        Your task is to guess it. Put the number you have guessed and check if your guess is correct. 
+        If your guess is correct it will show "Correct", otherwise it will show "Wrong".
+    </h3>
+    <hr>
+    <div id="game_area">
+        <div><input type="tel" id="guess_number_1" maxlength="1" size="1" class="numberInput" />
+        <input type="tel" id="guess_number_2" maxlength="1" size="1" class="numberInput" /></div>
+        <div><button id="check_button" class="button-25" onclick="checkNumber()">Check</button></div>
+        <div id="message_area"></div>
+    </div>
+    <script>
+        let generatedNumber = Math.floor(Math.random() * 100);
+        console.log(generatedNumber);
+
+        function checkNumber(){
+            let guessedNumber1 = document.getElementById("guess_number_1").value;
+            let guessedNumber2 = document.getElementById("guess_number_2").value;
+            let guessedNumber = guessedNumber1 + guessedNumber2; //string concat
+            
+            let msgArea = document.getElementById("message_area");
+            if(guessedNumber == generatedNumber){
+                msgArea.innerText = "Correct";
+            }else{
+                msgArea.innerText = "Wrong";
+            }
+        }
+    </script>
+    <style>
+        #game_area{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #game_area>div{
+            margin: 20px;
+        }
+        
+        
+    </style>
+</body>
+</html>

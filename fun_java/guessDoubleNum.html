@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the single digit number</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <h1>Guess the double digit number</h1>
+    <h3>One double digit number is generated (from 0 to 99). 
+        Your task is to guess it. Put the number you have guessed and check if your guess is correct. 
+        If your guess is correct it will show "Correct", otherwise it will show "Wrong".
+    </h3>
+    <hr>
+    <div id="game_area">
+        <div><input type="tel" id="guess_number" maxlength="2" size="2" class="numberInput" /></div>
+        <div><button id="check_button" class="button-25" onclick="checkNumber()">Check</button></div>
+        <div id="message_area"></div>
+    </div>
+    <script>
+        let generatedNumber = Math.floor(Math.random() * 100);
+        console.log(generatedNumber);
+
+        function checkNumber(){
+            let guessedNumber = document.getElementById("guess_number").value;
+            let msgArea = document.getElementById("message_area");
+            if(guessedNumber == generatedNumber){
+                msgArea.innerText = "Correct";
+            }else{
+                msgArea.innerText = "Wrong";
+            }
+        }
+    </script>
+    <style>
+        #game_area{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #game_area>div{
+            margin: 20px;
+        }
+        
+        
+    </style>
+</body>
+</html>
