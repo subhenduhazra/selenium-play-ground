@@ -62,15 +62,15 @@
         function calculate(){
             if(shape == "square"){
                 let side = document.getElementById("square_side").value;
-                document.getElementById("area_disp").innerText =  side * side; 
+                document.getElementById("area_disp").innerText =  truncateDecimals(side * side,4); 
             }else if(shape == "rectangle"){
                 let base = document.getElementById("rectangle_length").value;
                 let height = document.getElementById("rectangle_width").value;
-                document.getElementById("area_disp").innerText = base * height;
+                document.getElementById("area_disp").innerText = truncateDecimals(base * height, 4);
             }else if(shape == "triangle"){
                 let base = document.getElementById("triangle_base").value;
                 let height = document.getElementById("triangle_height").value;
-                document.getElementById("area_disp").innerText = 0.5 * base * height;
+                document.getElementById("area_disp").innerText = truncateDecimals(0.5 * base * height, 4);
             }else if(shape == "circle"){
                 let radius = document.getElementById("circle_radius").value;
                 document.getElementById("area_disp").innerText = truncateDecimals( Math.PI * radius *radius, 4);
