@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ifElse</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <h1>Conditional check</h1>
+    <h4>Click to "Get the shape" button then it will show one shape, 
+        then it will ask for marameters to calculate its area.<br>
+        Possible shapes: square, rectangle, triangle, circle. Please try with both if-else and switch case.
+    </h4>
+    <hr>
+    <div id="game_area">
+        <div><button onclick="getShape()">Get the shape</button></div>
+        <div><span>Shape: </span><span id="shape_display"></span></div>
+        <div id="shape_params"></div>
+        <div><button onclick="calculate()">Calculate</button></div>
+        <div>
+            <div><span>Area: </span><span id="area_disp"></span></div>
+        </div>
+        
+    </div>
+
+    <script>
+        let shape;
+        function getShape(){
+            const shapes = ["square","rectangle","triangle","circle"]
+            shape = shapes[Math.floor(Math.random() * 4)];
+
+            document.getElementById("shape_display").innerText=shape;
+            console.log(shape);
+
+            generateParams();
+        }
+        function generateParams(){
+            let str="";
+            if(shape == "square"){
+                str+=`
+                    <div>Side: <input type="text" id="square_side"></div>
+                `;
+            }else if(shape == "rectangle"){
+                str+=`
+                    <div>Length: <input type="text" id="rectangle_length"></div><br>
+                    <div>Width: <input type="text" id="rectangle_width"></div>
+                `;
+            }else if(shape == "triangle"){
+                str+=`
+                    <div>Base: <input type="text" id="triangle_base"></div><br>
+                    <div>Height: <input type="text" id="triangle_height"></div>
+                `;
+            }else if(shape == "circle"){
+                str+=`
+                    <div>Radius: <input type="text" id="circle_radius"></div>
+                `;
+            }
+            document.getElementById("shape_params").innerHTML = str;
+        }
+
+        function calculate(){
+            if(shape == "square"){
+                let side = document.getElementById("square_side").value;
+                document.getElementById("area_disp").innerText =  side * side; 
+            }else if(shape == "rectangle"){
+                let base = document.getElementById("rectangle_length").value;
+                let height = document.getElementById("rectangle_width").value;
+                document.getElementById("area_disp").innerText = base * height;
+            }else if(shape == "triangle"){
+                let base = document.getElementById("triangle_base").value;
+                let height = document.getElementById("triangle_height").value;
+                document.getElementById("area_disp").innerText = 0.5 * base * height;
+            }else if(shape == "circle"){
+                let radius = document.getElementById("circle_radius").value;
+                document.getElementById("area_disp").innerText = truncateDecimals( Math.PI * radius *radius, 4);
+            }
+        }
+
+        function truncateDecimals(number, digits) {
+            var multiplier = Math.pow(10, digits),
+                adjustedNum = number * multiplier,
+                truncatedNum = Math[adjustedNum < 0 ? 'ceil' : 'floor'](adjustedNum);
+
+            return truncatedNum / multiplier;
+        };
+    </script>
+</body>
+</html>
