@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+    <link rel="stylesheet" href="./userMain.css">
+    <script src="../common.js"></script>
+    <script src="./user.js"></script>
+    <script src="./createUser.js" defer></script>
+</head>
+<body>
+    <div id="main_area">
+        <header>Create User</header>
+        <article>
+            <div class="lineItems"><div>Name:</div> <div><input type="text" class="bitableTextbox" placeholder="John Doe" id="name"></div></div>
+            <div class="lineItems"><div>Email:</div> <div><input type="email" class="bitableTextbox" placeholder="john@abc.com" id="user-email"></div></div>
+            <div class="lineItems"><div>Password:</div> <div><input type="password" class="bitableTextbox" placeholder="Password" id="password"></div></div>
+            <div class="lineItems"><div>Confirm Password:</div> <div><input type="password" class="bitableTextbox" placeholder="Password" id="confirm-password"></div></div>
+            <div class="lineItems"><div>Gender: <input type="radio" id="gender-male" name="gender"> Male   <input type="radio" id="gender-female" name="gender"> Female </div></div>
+            <div class="lineItems"><input type="checkbox" id="adult-confirm"> I am 18 year old<br><br></div>
+            <div class="lineItems">Date of birth: <input type="date" id="user-dob"></div>
+            
+
+            <div class="lineItems" id="actionButtonArea"><button class="button-15" onclick="createUser()" id="create_button">Create</button></div>
+        </article>
+        <footer>
+            <span>Already have an account? <a href="./login.html">Login</a></span>
+            <span id="footRightLink"><a href="./forgotPassword.html">Forgot password</a></span>
+        </footer>
+    </div>
+</body>
+</html>

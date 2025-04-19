@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <link rel="stylesheet" href="./userMain.css">
+    <script src="../common.js"></script>
+    <script src="./user.js"></script>
+    <script src="./myAccount.js" defer></script>
+</head>
+<body>
+    <div id="main_area">
+        <header>My Account</header>
+        <article>
+            <div class="lineItems"><div>Name:</div><div id="disp_name"></div></div>
+            <div class="lineItems"><div>Email:</div><div id="disp_email"></div></div>
+            <div class="lineItems"><div>Gender:</div><div id="disp_gender"></div></div>
+            <div class="lineItems"><div>DOB:</div><div id="disp_dob"></div></div>
+        </article>
+        <footer>
+            <span><button onclick="logout()">Logout</button></span>
+            <!-- <span id="footRightLink"><a href="./createUser.html">Create user</a></span> -->
+        </footer>
+        <style>
+            article{
+                margin: 5px;
+            }
+            .lineItems{
+                display: flex;
+                flex-direction: row ;
+                margin: 0px;
+                width: 100%;
+            }
+            .lineItems>div{
+                padding: 10px;
+                border-bottom: 1px solid gray;
+                flex-grow: 1;
+            }
+            .lineItems div:first-child{
+                width: 30%;
+                background-color: lightgray;
+                flex-grow: 0;
+            }
+        </style>
+</body>
+</html>

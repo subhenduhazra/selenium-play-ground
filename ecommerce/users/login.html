@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./userMain.css">
+    <script src="../common.js"></script>
+    <script src="./user.js"></script>
+    <script src="./login.js" defer></script>
+</head>
+<body>
+    <div id="main_area">
+        <header>Log in</header>
+        <article>
+            <div class="lineItems"><div>Email:</div> <div><input type="email" class="bitableTextbox" placeholder="john@abc.com" id="user-email"></div></div>
+            <div class="lineItems"><div>Password:</div> <div><input type="password" class="bitableTextbox" placeholder="Password" id="password"></div></div>
+           
+            <div class="lineItems" id="actionButtonArea"><button class="button-15" onclick="login()" id="login_button">Log in</button></div>
+        </article>
+        <footer>
+            <button id="thirdPartyLogin" onclick="thirdPartyLogin()">Third party login</button>
+            <span><a href="./createUser.html">Create User</a></span>
+            <span id="footRightLink"><a href="./forgotPassword.html">Forgot password</a></span>
+        </footer>
+    </div>
+</body>
+</html>

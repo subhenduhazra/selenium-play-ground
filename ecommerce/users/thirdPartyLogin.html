@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third Party Login</title>
+</head>
+<body>
+    <h1>Third party login</h1>
+    <h3>This is simulated third party login system, like google login or facebook login.</h3>
+    <hr>
+    <div>
+        Your name: <input type="text" id="thirdPartyLogin_name"><br><br>
+        Your email: <input type="email" id="thirdPartyLogin_email"><br><br>
+        <button onclick="thirdPartyLogin()">Login</button>
+
+
+    </div>
+    <script>
+        function thirdPartyLogin(){
+            console.log(window.opener);
+            
+        }
+    </script>
+</body>
+</html>

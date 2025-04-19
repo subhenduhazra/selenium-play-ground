@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="./userMain.css">
+</head>
+<body>
+    <div id="main_area">
+        <header></header>
+        <div id="devErrorMsg" style="text-align: center;margin-top: 40px;"></div>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const message = urlParams.get('message');
+        const heading = urlParams.get('heading');
+        document.getElementById("devErrorMsg").innerHTML = message;
+        document.querySelector("#main_area header").innerHTML = heading;
+    </script>
+</body>
+</html>
