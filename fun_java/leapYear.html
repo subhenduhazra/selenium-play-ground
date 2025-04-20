@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap year</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <h1>Tell if number is leap year or not</h1>
+    <h3>One year is generated. 
+        Your task is to check the checkbox if it is leap year".
+    </h3>
+    <hr>
+    <div id="game_area">
+        <div><h1 id="generated_text"></h1></div>
+        <div><input type="radio" id="ans_text_ly" name="letter" /> Leap Year <input name="letter" type="radio" id="ans_text_nly"> Not leap year</div>
+        <div><button id="check_button" class="button-25" onclick="checkNumber()">Check</button></div>
+        <div id="message_area"></div>
+    </div>
+    <script>
+        let generatedYear = 1900+ Math.floor(Math.random() * (2200-1900));
+        console.log(generatedYear);
+        document.getElementById("generated_text").innerText=generatedYear;
+
+        function checkNumber(){
+            let ly = document.getElementById("ans_text_ly").checked;
+            let nly = document.getElementById("ans_text_nly").checked;
+            let msgArea = document.getElementById("message_area");
+         
+            if((isLeapYear(generatedYear) && ly) || (!isLeapYear(generatedYear) && nly)){
+                msgArea.innerText = "Correct";
+            }else{
+                msgArea.innerText = "Wrong";
+            }
+        }
+
+        function isLeapYear(year){
+            if (
+                year % 100 === 0 ? year % 400 === 0 : year % 4 === 0
+            )
+                return true;
+            else
+               return false;
+           
+        }
+    </script>
+</body>
+</html>
