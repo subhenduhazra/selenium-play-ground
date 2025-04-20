@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime number</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <h1>Tell if number is prime or not prime</h1>
+    <h3>One number is generated. 
+        Your task is to check the checkbox if it is prime".
+    </h3>
+    <hr>
+    <div id="game_area">
+        <div><h1 id="generated_text"></h1></div>
+        <div><input type="radio" id="ans_text_vowel" name="letter" /> Vowel <input name="letter" type="radio" id="ans_text_consonant"> Consonant</div>
+        <div><button id="check_button" class="button-25" onclick="checkNumber()">Check</button></div>
+        <div id="message_area"></div>
+    </div>
+    <script>
+        let alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+        let generatedNumber = Math.floor(Math.random() * 26);
+        let letter = alphabet[generatedNumber];
+        console.log(letter);
+        document.getElementById("generated_text").innerText=letter;
+
+        function checkNumber(){
+            let vowel = document.getElementById("ans_text_vowel").checked;
+            let consonant = document.getElementById("ans_text_consonant").checked;
+            let msgArea = document.getElementById("message_area");
+         
+            if((isVowel(letter) && vowel) || (!isVowel(letter) && consonant)){
+                msgArea.innerText = "Correct";
+            }else{
+                msgArea.innerText = "Wrong";
+            }
+        }
+
+        function isVowel(s){
+            let vowels = [ 'A', 'E', 'I', 'O', 'U'];
+            return vowels.includes(s)
+           
+        }
+    </script>
+</body>
+</html>

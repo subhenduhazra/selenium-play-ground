@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime number</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <h1>Tell if number is prime or not prime</h1>
+    <h3>One number is generated. 
+        Your task is to check the checkbox if it is prime".
+    </h3>
+    <hr>
+    <div id="game_area">
+        <div><h1 id="generated_text"></h1></div>
+        <div><input type="checkbox" id="ans_text" /> Prime</div>
+        <div><button id="check_button" class="button-25" onclick="checkNumber()">Check</button></div>
+        <div id="message_area"></div>
+    </div>
+    <script>
+        let numbers = [3, 16, 2, 97, 41, 25, 87, 92, 61, 72, 95, 189, 59, 7, 9, 17, 5, 221, 199, 213]
+        let generatedNumber = Math.floor(Math.random() * 20);
+        let primeNo = numbers[generatedNumber];
+        console.log(primeNo);
+        document.getElementById("generated_text").innerText=primeNo;
+
+        function checkNumber(){
+            let ansNumber = document.getElementById("ans_text").checked;
+            let msgArea = document.getElementById("message_area");
+            console.log(ansNumber)
+            console.log("Actual: "+isPrime(primeNo))
+            if((isPrime(primeNo) && ansNumber) || (!isPrime(primeNo) && !ansNumber)){
+                msgArea.innerText = "Correct";
+            }else{
+                msgArea.innerText = "Wrong";
+            }
+        }
+
+        function isPrime(n){
+            let isPrime = true;
+
+            if (n <= 1) {
+                isPrime = false;
+            } else {
+                for (let i = 2; i * i <= n; i++) {
+                    if (n % i === 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+            return isPrime;
+        }
+    </script>
+</body>
+</html>
