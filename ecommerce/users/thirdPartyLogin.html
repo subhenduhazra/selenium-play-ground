@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Third Party Login</title>
+    <script src="thirdPartyLogin.js" defer></script>
 </head>
 <body>
     <h1>Third party login</h1>
@@ -12,15 +13,10 @@
     <div>
         Your name: <input type="text" id="thirdPartyLogin_name"><br><br>
         Your email: <input type="email" id="thirdPartyLogin_email"><br><br>
-        <button onclick="thirdPartyLogin()">Login</button>
+        <button onclick="thirdParty_popup_Login()">Login</button>
 
 
     </div>
-    <script>
-        function thirdPartyLogin(){
-            console.log(window.opener);
-            
-        }
-    </script>
+    
 </body>
 </html>
