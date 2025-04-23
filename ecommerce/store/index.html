@@ -4,12 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ECommerce Store</title>
+    <link rel="stylesheet" href="./main.css">
     <script src="../common.js"></script>
     <script src="../users/user.js"></script>
-    <script src="common_store.js"></script>
+    <script src="common_store.js" defer></script>
     <script src="index.js" defer></script>
 </head>
 <body>
+    <header id="page_header">
+        <div id="header_name">ECommerce Store</div>
+        <div id="header_cart_icon"><img src="./rsc/cart-shopping-solid.svg" height="30"></div>
+    </header>
+    
+    <div id="searchBar">
+        <span>Search</span> <input type="text" id="searchItemBox"><button onclick="searchItem()">Search</button>
+    </div>
+    <div id="cart">
+        <header>Cart</header>
+        <div id="cartDisplayArea">
+            
+        </div>
+        <div id="totalDisplay"><span>Total: </span><span id="totalCartValue">0</span></div>
+    </div>
+    
+    <div id="productDisplayArea">
+
+    </div>
     
 </body>
 </html>

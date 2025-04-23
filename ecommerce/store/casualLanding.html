@@ -85,9 +85,14 @@
     <h1>Welcome to ECommerce</h1>
     <p>Discover a smarter way to shop. At ECommerce, we bring you top-quality products, exclusive deals, and a seamless shopping experience—all in one place. Join thousands of happy customers today.</p>
     <div class="buttons">
-      <button class="btn btn-login">Login</button>
-      <button class="btn btn-create">Create Account</button>
+      <button class="btn btn-login" onclick="loginButtonClick()">Login</button>
+      <button class="btn btn-create" onclick="window.location='../users/createUser.html'">Create Account</button>
     </div>
   </div>
 </body>
+<script>
+  function loginButtonClick(){
+    window.location='../users/login.html?redirect='+encodeURIComponent("../store/index.html");
+  }
+</script>
 </html>
