@@ -23,6 +23,7 @@ function loginUser(user){
 
 function logOutUser(){
     localStorage.removeItem("logged_in_user");
+    localStorage.removeItem("user_cart");
 }
 
 function getLoggedInUser(){

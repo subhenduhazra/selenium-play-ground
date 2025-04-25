@@ -7,17 +7,18 @@
     <link rel="stylesheet" href="./main.css">
     <script src="../common.js"></script>
     <script src="../users/user.js"></script>
-    <script src="common_store.js" defer></script>
+    <script src="./products.js" defer></script>
+    <script src="cart.js"></script>
     <script src="index.js" defer></script>
 </head>
 <body>
     <header id="page_header">
         <div id="header_name">ECommerce Store</div>
-        <div id="header_cart_icon"><img src="./rsc/cart-shopping-solid.svg" height="30"></div>
+        <div id="my_account_name"><a href="../users/myAccount.html">My Account</a></div>
     </header>
     
     <div id="searchBar">
-        <span>Search</span> <input type="text" id="searchItemBox"><button onclick="searchItem()">Search</button>
+        <div id="searchWrapper"><span id="searchText">Search</span> <input type="text" id="searchItemBox"><button id="searchButton" onclick="searchItem()">Search</button></div>
     </div>
     <div id="cart">
         <header>Cart</header>
@@ -25,6 +26,7 @@
             
         </div>
         <div id="totalDisplay"><span>Total: </span><span id="totalCartValue">0</span></div>
+        <div id="checkoutBtnCont"><button onclick="checkOutBtnClick()" id="checkOutBtn">Checkout</button></div>
     </div>
     
     <div id="productDisplayArea">
