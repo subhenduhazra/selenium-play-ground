@@ -3,35 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECommerce Store</title>
+    <title>Checkout</title>
     <link rel="stylesheet" href="./main.css">
     <script src="../common.js"></script>
     <script src="../users/user.js"></script>
     <script src="./products.js" defer></script>
     <script src="cart.js" defer></script>
-    <script src="index.js" defer></script>
+    <script src="checkout.js" defer></script>
 </head>
 <body>
     <header id="page_header">
         <div id="header_name">ECommerce Store</div>
         <div id="my_account_name"><a href="../users/myAccount.html">My Account</a></div>
     </header>
-    
-    <div id="searchBar">
+    <!-- <div id="searchBar">
         <div id="searchWrapper"><span id="searchText">Search</span> <input type="text" id="searchItemBox"><button id="searchButton" onclick="searchItem()">Search</button></div>
-    </div>
-    <div id="cart">
-        <header>Cart</header>
-        <div id="cartDisplayArea">
+    </div> -->
+    <div id="checkout_cart">
+        <header>Your Cart</header>
+        <div id="checkout_cartDisplayArea">
             
         </div>
         <div id="totalDisplay"><span>Total: </span><span id="totalCartValue">0</span></div>
         <div id="checkoutBtnCont"><button onclick="checkOutBtnClick()" id="checkOutBtn">Checkout</button></div>
     </div>
-    
-    <div id="productDisplayArea">
-
-    </div>
-    
 </body>
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <link rel="stylesheet" href="./userMain.css">
+    <script src="../common.js"></script>
+    <script src="./user.js"></script>
+    <script src="./address.js"></script>
+    <script src="./orderDetails.js" defer></script>
+
+</head>
+<body>
+    <div id="main_area">
+        <header>Order Details</header>
+        <div class="thanksBox" id="newlyCtreatedTanks">Thanks for making an order.</div>
+        <article class="details_table">
+            <div class="lineItems"><div>Order ID:</div><div id="disp_orderId"></div></div>
+            <div class="lineItems"><div>Time:</div><div id="disp_time"></div></div>
+            <div class="lineItems"><div>Items:</div><div id="disp_items"></div></div>
+            <div class="lineItems"><div>Total Price:</div><div id="disp_totalPrice"></div></div>
+            <div class="lineItems"><div>Payment Method:</div><div id="disp_paymentMethod"></div></div>
+            <div class="lineItems"><div>Transaction ID:</div><div id="disp_transactionId"></div></div>
+            <div class="lineItems"><div>Shipping Address:</div><div id="disp_shippingAddress"></div></div>
+            <div class="lineItems"><div>Billing Address:</div><div id="disp_bilingAddress"></div></div>
+        </article>
+        <button>Print</button>
+    </div>
+</body>
+</html>

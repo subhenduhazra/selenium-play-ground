@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src="../common.js"></script>
+    <script src="../users/user.js"></script>
+    <script src="./products.js" defer></script>
+    <script src="cart.js" defer></script>
+    <script src="../users/address.js" defer></script>
+    <script src="paymentPage.js" defer></script>
+</head>
+<body>
+    <header id="page_header">
+        <div id="header_name">ECommerce Store</div>
+        <div id="my_account_name"><a href="../users/myAccount.html">My Account</a></div>
+    </header>
+    <div id="payment_info">
+        <header >Make your payment</header>
+        <div class="pay-section-wrapper">
+            <header class="payment_section_header">Shipping Address</header>
+            <div class="pay-wrap-article" id="shipping-address-display"></div>
+        </div>
+        <div class="pay-section-wrapper">
+            <header class="payment_section_header">Billing Address</header>
+            <div class="pay-wrap-article" id="billing-address-display"></div>
+        </div>
+        <div class="pay-section-wrapper">
+            <header  class="payment_section_header">Payment Info</header>
+            <div class="pay-wrap-article">
+                <span>Amount:</span>
+                <span id="pay-amount"></span>
+            </div>
+        </div>
+        <div class="pay-section-wrapper">
+            <header  class="payment_section_header">Payment Options</header>
+            <div class="pay-wrap-article">
+                <div>Pay by PPayment payment gateway</div><br>
+                <div><button onclick="ppaymentPay()" id="ppayment-button" class="button-15">Pay Now</button></div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

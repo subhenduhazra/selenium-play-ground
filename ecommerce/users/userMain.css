@@ -30,10 +30,64 @@ body{
     display: flex;
     justify-content: end;
 }
-.lineItems{
-    margin: 10px;
+#main_area article{
+    margin: 5px 0px;
+}
+.input_form .lineItems{
+    margin:10px;
+}
+.details_table .lineItems{
+    display: flex;
+    flex-direction: row ;
+    margin: 0px;
+    width: 100%;
+}
+.details_table .lineItems>div{
+    padding: 10px;
+    border-bottom: 1px solid gray;
+    flex-grow: 1;
+}
+.details_table .lineItems div:first-child{
+    width: 30%;
+    background-color: lightgray;
+    flex-grow: 0;
+}
+#address_cont{
+    margin: 10px 5px;
+}
+#address_cont .address{
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+#address_cont .address .address_field{
+    font-weight: bold;
+}
+
+#address_cont .address .remove_addressBtn_cont{
+    display: flex;
+    justify-content: end;
+}
+.noAddessDiv{
+    display: flex;
+    justify-content: center;
+    color:gray;
+    font-style:italic
+}
+#addAddress_cont{
+    display: flex;
+    justify-content: center;
 }
 
 #footRightLink{
     float: right;
+}
+
+.thanksBox{
+    padding: 10px;
+    background-color: green;
+    color: white;
+    text-align: center;
 }

@@ -40,7 +40,7 @@ function validate(){
 
         const dob = document.getElementById("user-dob").value;
 
-        users.push({email, password, name, gender, dob});
+        users.push({email, password, name, gender, dob, address:[], orders:[]});
         saveAllUsers(users);
         alert("User created successfully")
         window.location="message.html?heading=Success!&message="+encodeURIComponent("User Created!, <a id='login_link' href='login.html'>Log in</a>");

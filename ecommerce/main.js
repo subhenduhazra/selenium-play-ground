@@ -1,0 +1,1 @@
+window.location="./store/index.html"

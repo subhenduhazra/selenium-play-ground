@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPayment - Payment Page</title>
+    <link rel="stylesheet" href="./PPayment.css">
+</head>
+<body>
+
+<div class="payment-container">
+    <div class="logo-title"> <!-- 👈 wrap logo and text together -->
+        <!-- <img src="https://cdn-icons-png.flaticon.com/512/157/157932.png" alt="Logo" class="logo" width="200"> -->
+        <h1 class="company-name">PPayment</h1>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-button active" data-target="credit">Credit Card</button>
+        <button class="tab-button" data-target="debit">Debit Card</button>
+    </div>
+
+    <h2 id="form-heading">Credit Card Payment</h2>
+
+    <form id="payment-form">
+        <div class="form-group">
+            <label for="card-name">Name on Card</label>
+            <input type="text" id="card-name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" maxlength="19" required>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="expiry">Expiry Date (MM/YY)</label>
+                <input type="text" id="expiry" maxlength="5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" maxlength="4" required>
+            </div>
+        </div>
+
+        <button type="submit" id="pay-button">Pay Now</button>
+    </form>
+
+    <div id="message"></div>
+</div>
+
+<script src="./PPayment_script.js"></script>
+
+</body>
+</html>

@@ -2,7 +2,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const cliendId = urlParams.get('client-id');
 if(!cliendId){
-    document.getElementsByTagName("body")[0].innerHTML="<h1>Client Id not set or invalid, contact to admin/support</h1>"
+    document.getElementsByTagName("body")[0].innerHTML="<h1>Something wrong, contact to admin/support</h1>"
 }
 
 function thirdParty_popup_Login(){

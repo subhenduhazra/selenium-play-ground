@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECommerce Store</title>
+    <title>Product Details</title>
     <link rel="stylesheet" href="./main.css">
     <script src="../common.js"></script>
     <script src="../users/user.js"></script>
     <script src="./products.js" defer></script>
-    <script src="cart.js" defer></script>
-    <script src="index.js" defer></script>
+    <script src="./cart.js" defer></script>
+    <script src="./productDetails.js" defer></script>
 </head>
 <body>
     <header id="page_header">
         <div id="header_name">ECommerce Store</div>
         <div id="my_account_name"><a href="../users/myAccount.html">My Account</a></div>
     </header>
-    
-    <div id="searchBar">
-        <div id="searchWrapper"><span id="searchText">Search</span> <input type="text" id="searchItemBox"><button id="searchButton" onclick="searchItem()">Search</button></div>
-    </div>
     <div id="cart">
         <header>Cart</header>
         <div id="cartDisplayArea">
@@ -30,8 +26,23 @@
     </div>
     
     <div id="productDisplayArea">
-
+        <header id="details_header"></header>
+        <div id="details_image_cont" class="bSec"><div id="details_image"></div></div>
+        <div id="detaild_price_cont" class="bSec"><span>Price: </span><span id="detaild_price"></span></div>
+        <div class="bSec" id="addToCart_cont">
+            <button class="addToCartButton"  onClick='details_addToCart()' id="details_addToCart">Add To Card</button>
+        </div>
+        <div class="bSec">
+            <header>Description: </header>
+            <div id="details_description"></div>
+        </div>
+        <div class="bSec">
+            <header>Specifications:</header>
+            <div id="details_spec">
+                
+            </div>
+        </div>
     </div>
-    
+
 </body>
 </html>

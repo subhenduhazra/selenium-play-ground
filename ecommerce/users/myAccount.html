@@ -7,41 +7,39 @@
     <link rel="stylesheet" href="./userMain.css">
     <script src="../common.js"></script>
     <script src="./user.js"></script>
+    <script src="./address.js"></script>
     <script src="./myAccount.js" defer></script>
 </head>
 <body>
     <div id="main_area">
         <header>My Account</header>
-        <article>
+        <article class="details_table">
             <div class="lineItems"><div>Name:</div><div id="disp_name"></div></div>
             <div class="lineItems"><div>Email:</div><div id="disp_email"></div></div>
             <div class="lineItems"><div>Gender:</div><div id="disp_gender"></div></div>
             <div class="lineItems"><div>DOB:</div><div id="disp_dob"></div></div>
         </article>
+        <div id="">
+            <header>Address Book</header>
+            <div id="address_cont">
+                <!-- <div class="address">
+                    <div><span class="address_field">Name:</span><span>Subhendu hazra</span></div>
+                    <div><span class="address_field">Phone:</span><span>8900409188</span></div>
+                    <div>
+                        <div class="address_field">Address:</div>
+                        <div>39/A Santiniketan Palli, Arambagh, hooghly</div>
+                        <div><span class="address_field">Pincode:</span><span>700098</span></div>
+                    </div>
+                    <div class="remove_addressBtn_cont"><button onclick="removeAddress()" class="removeAddressBtn">Remove</button></div>
+                </div> -->
+            </div>
+            <div id="addAddress_cont"><button onclick="addAddress()" >Add Address</button></div>
+        </div>
+        <hr>
         <footer>
             <span><button onclick="logout()">Logout</button></span>
             <!-- <span id="footRightLink"><a href="./createUser.html">Create user</a></span> -->
         </footer>
-        <style>
-            article{
-                margin: 5px;
-            }
-            .lineItems{
-                display: flex;
-                flex-direction: row ;
-                margin: 0px;
-                width: 100%;
-            }
-            .lineItems>div{
-                padding: 10px;
-                border-bottom: 1px solid gray;
-                flex-grow: 1;
-            }
-            .lineItems div:first-child{
-                width: 30%;
-                background-color: lightgray;
-                flex-grow: 0;
-            }
-        </style>
+    
 </body>
 </html>

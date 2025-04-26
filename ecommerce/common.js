@@ -4,7 +4,9 @@ const globalUsers = [
         password:"Ruchi123",
         name:"Ruchismita Das",
         gender:"female",
-        dob:"1996-11-16"
+        dob:"1996-11-16",
+        address:[],
+        orders:[]
     }
 ]
 function saveAllUsers(users){
@@ -25,4 +27,4 @@ function clearStorage(){
     localStorage.removeItem("global_users");
 }
 
-loadAllUsers(globalUsers);
+loadAllUsers();

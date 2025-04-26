@@ -7,7 +7,7 @@ if(!ifLoggedIn()){
 let ap = new ProductContainer(document.getElementById("productDisplayArea"),productList);
 ap.render();
 
-let cart = new Cart();
+let cart = new Cart(document.getElementById("cartDisplayArea"));
 
 
 function addToCart(itemId){

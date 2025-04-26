@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add address</title>
+    <script src="addAddress.js" defer></script>
+    <link rel="stylesheet" href="./userMain.css">
+</head>
+<body>
+    
+    <div id="main_area">
+        <header>Add Address</header>
+        <article class="input_form">
+            <div class="lineItems"><div>Name:</div> <div><input type="text" class="bitableTextbox" placeholder="John Doe" id="address_name"></div></div>
+            <div class="lineItems"><div>Phone:</div> <div><input type="text" class="bitableTextbox" placeholder="0123456789" id="address_phone"></div></div>
+            <div class="lineItems"><div>Pin:</div> <div><input type="text" class="bitableTextbox" placeholder="876456" id="address_pincode"></div></div>
+            <div class="lineItems"><div>Address:</div> <div><textarea class="bitableTextbox" id="address_address" placeholder="G56/2 Puravi Road, Marathalli, Bangalore"></textarea></div></div>
+           
+            <div class="lineItems" id="actionButtonArea"><button class="button-15" onclick="addThisAddress()" id="create_button">Add</button></div>
+        </article>
+       
+    </div>
+</body>
+</html>

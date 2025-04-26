@@ -21,10 +21,11 @@ class CartItem{
 }
 
 class Cart{
-    constructor(){
+    constructor(displayArea){
         this.arr = [];
+        this.displayArea =  displayArea;
         const cartItems = localStorage.getItem("user_cart");
-        console.log(cartItems);
+        // console.log(cartItems);
         if(cartItems){
             const cartArr = JSON.parse(cartItems);
             for(let i = 0; i<cartArr.length; i++){
@@ -32,7 +33,7 @@ class Cart{
             }
             this.renderCart();
         }
-        console.log(this.arr)
+        // console.log(this.arr)
     }
     addToCart(item, qty){
         let found = false;
@@ -64,11 +65,15 @@ class Cart{
     }
 
     renderCart(){
+        if(!this.displayArea){
+            console.log("No where to render ... ");
+            return;
+        }
         let str="";
         for(let i=0; i<this.arr.length; i++){
             str+=this.arr[i].render();
         }
-        document.getElementById("cartDisplayArea").innerHTML = str;
+        this.displayArea.innerHTML = str;
         this.save();
         this.calculateAndDisplayTotal();
     }
@@ -77,7 +82,9 @@ class Cart{
         for(let i=0; i<this.arr.length; i++){
             total+=this.arr[i].item.price * this.arr[i].qty;
         }
-        document.getElementById("totalCartValue").innerText=total;
+        if(document.getElementById("totalCartValue"))
+            document.getElementById("totalCartValue").innerText=total;
+        return total;
     }
 
     save(){

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Address</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src="../common.js"></script>
+    <script src="../users/user.js"></script>
+    <script src="./products.js" defer></script>
+    <script src="cart.js" defer></script>
+    <script src="../users/address.js" defer></script>
+    <script src="selectAddress.js" defer></script>
+</head>
+<body>
+    <header id="page_header">
+        <div id="header_name">ECommerce Store</div>
+        <div id="my_account_name"><a href="../users/myAccount.html">My Account</a></div>
+    </header>
+    <div id="address_select">
+        <div id="addressDeclare">
+            Please select shipping and billing address. If you are unable to see the addresses, please add the address to address book in my account.
+        </div>
+        <article id="shipping_address">
+            <header>Shipping Address</header>
+            <div id="shippingAddress_dispArea"></div>
+        </article>
+        
+        <article id="billing_address">
+            <header>Billing Address</header>
+            <div id="billingAddress_dispArea"></div>
+        </article>
+        <div id="checkoutBtnCont"><button onclick="makePaymentBtnClick()" id="makePaymentBtn">Make Payment</button></div>
+    </div>
+</body>
+</html>
