@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="./userMain.css">
     <script src="../common.js"></script>
     <script src="./user.js"></script>
+    <script src="../store/cart.js"></script>
     <script src="./address.js"></script>
     <script src="./orderDetails.js" defer></script>
 
 </head>
 <body>
-    <div id="main_area">
+    <div id="main_area" style="max-width: 700px; width: 80%;">
         <header>Order Details</header>
         <div class="thanksBox" id="newlyCtreatedTanks">Thanks for making an order.</div>
         <article class="details_table">
@@ -23,9 +24,12 @@
             <div class="lineItems"><div>Payment Method:</div><div id="disp_paymentMethod"></div></div>
             <div class="lineItems"><div>Transaction ID:</div><div id="disp_transactionId"></div></div>
             <div class="lineItems"><div>Shipping Address:</div><div id="disp_shippingAddress"></div></div>
-            <div class="lineItems"><div>Billing Address:</div><div id="disp_bilingAddress"></div></div>
+            <div class="lineItems"><div>Billing Address:</div><div id="disp_billingAddress"></div></div>
         </article>
-        <button>Print</button>
+        <button onclick="printButtonAction()">Print Invoice</button>
+        
+        <a href="../store/index.html">Go to ECommerce Store</a>
+    
     </div>
 </body>
 </html>

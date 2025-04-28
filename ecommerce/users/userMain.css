@@ -47,7 +47,7 @@ body{
     border-bottom: 1px solid gray;
     flex-grow: 1;
 }
-.details_table .lineItems div:first-child{
+.details_table .lineItems>div:first-child{
     width: 30%;
     background-color: lightgray;
     flex-grow: 0;
@@ -84,10 +84,27 @@ body{
 #footRightLink{
     float: right;
 }
-
+#orderHistory_sec{
+    padding: 20px 10px 5px 0px;
+}
 .thanksBox{
     padding: 10px;
     background-color: green;
     color: white;
     text-align: center;
+}
+
+#order_history_disp{
+    margin: 10px;
+
+}
+table{
+    width: 100%;
+}
+table, th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+  }
+th,td{
+    padding: 5px;
 }

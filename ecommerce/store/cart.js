@@ -18,6 +18,11 @@ class CartItem{
             </div>
         `;
     }
+    renderSimple(){
+        return `
+            <div><div>${this.item.title}:</div> <div>${this.item.price} x ${this.qty} = ${this.qty * this.item.price}</div></div><br>
+        `
+    }
 }
 
 class Cart{
@@ -76,6 +81,12 @@ class Cart{
         this.displayArea.innerHTML = str;
         this.save();
         this.calculateAndDisplayTotal();
+    }
+    renderCartSimple(){
+        let str="";
+        for(let i=0; i<this.arr.length; i++){
+            str+=this.arr[i].renderSimple();
+        }
     }
     calculateAndDisplayTotal(){
         let total=0;
