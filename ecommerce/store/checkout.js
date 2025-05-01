@@ -20,5 +20,9 @@ function revomeFromCart(itemId){
 }
 
 function checkOutBtnClick(){
+    if(document.getElementById("totalCartValue").innerText.trim()=="0"){
+        alert("cart is empty")
+        return
+    }
     window.location="selectAddress.html";
 }

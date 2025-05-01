@@ -39,5 +39,9 @@ document.querySelectorAll(".product_item").forEach(elm => elm.addEventListener("
 }));
 
 function checkOutBtnClick(){
+    if(document.getElementById("totalCartValue").innerText.trim()=="0"){
+        alert("cart is empty")
+        return
+    }
     window.location="checkout.html";
 }
