@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Dropdown with JavaScript</title>
+  <style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      width: 200px;
+      user-select: none;
+      font-family: sans-serif;
+    }
+
+    .dropdown-toggle {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 5px;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .dropdown-menu span {
+      display: block;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .dropdown-menu span:hover {
+      background-color: #eee;
+    }
+
+    .dropdown.open .dropdown-menu {
+      display: block;
+    }
+    select {
+      width: 200px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      appearance: none; /* Hide default arrow in some browsers */
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5"><path fill="black" d="M0 0l5 5 5-5z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 10px 5px;
+    }
+  </style>
+</head>
+<body>
+<h1>Dropdown with div span</h1>
+<div class="dropdown" id="customDropdown">
+  <div class="dropdown-toggle" id="dropdownToggle">Choose your menu preference</div>
+  <div class="dropdown-menu" id="dropdownMenu">
+    <span data-value="chk-meal">Chiken meal</span>
+    <span data-value="egg-thali">Egg Thali</span>
+    <span data-value="veg-platter">Veg Platter</span>
+  </div>
+</div>
+<h3 id="selected"></h3>
+<br><br><br>
+<h1>Dropdown with select tag</h1>
+
+<select id="dropdown">
+    <option disabled selected>Choose your vehicle</option>
+    <option value="car">Car</option>
+    <option value="cycle">Cycle</option>
+    <option value="bike">Bike</option>
+  </select>
+  <h3 id="selectedSel"></h3>
+<script>
+      const dropdownSel = document.getElementById('dropdown');
+
+        dropdownSel.addEventListener('change', function() {
+        document.getElementById("selectedSel").innerHTML='Selected value: '+ this.value;
+        });
+
+  const dropdown = document.getElementById('customDropdown');
+  const toggle = document.getElementById('dropdownToggle');
+  const menu = document.getElementById('dropdownMenu');
+
+  // Toggle dropdown
+  toggle.addEventListener('click', () => {
+    dropdown.classList.toggle('open');
+  });
+
+  // Handle selection
+  menu.addEventListener('click', (e) => {
+    if (e.target.tagName === 'SPAN') {
+      toggle.textContent = e.target.textContent;
+      dropdown.classList.remove('open');
+      document.getElementById("selected").innerHTML='Selected value: '+ e.target.dataset.value; // Can be used for form handling
+    }
+  });
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>
